@@ -26,6 +26,11 @@ public class FLRS2X1 {
 	   			new FV(FZ.NL), new FV(FZ.PL), new FV(FZ.ZR), new FV(FZ.ZR), new FV(FZ.PL), 
 	   			new FV(FZ.ZR), new FV(FZ.ZR), new FV(FZ.NM), new FV(FZ.PM), new FV(FZ.NL),
 	   			new FV(FZ.ZR), new FV(FZ.PM), new FV(FZ.ZR), new FV(FZ.NM),	new FV(FZ.PL));
+		FLRS reader = new FLRS(new FV(FZ.NL), new FV(FZ.NM), new FV(FZ.ZR), new FV(FZ.PM), new FV(FZ.PL),
+				new FV(FZ.NL), new FV(FZ.NM), new FV(FZ.ZR), new FV(FZ.PM), new FV(FZ.PL),
+				new FV(FZ.NL), new FV(FZ.NM), new FV(FZ.ZR), new FV(FZ.PM), new FV(FZ.PL),
+				new FV(FZ.NL), new FV(FZ.NM), new FV(FZ.ZR), new FV(FZ.PM), new FV(FZ.PL),
+				new FV(FZ.NL), new FV(FZ.NM), new FV(FZ.ZR), new FV(FZ.PM), new FV(FZ.PL));
 
 		flrs2x1.Print();
 		
@@ -62,14 +67,14 @@ public class FLRS2X1 {
 
 				ArrayList<PlaceNameWithWeight> input = new ArrayList<>();
 				input.add(new PlaceNameWithWeight("P1", 1F));
-				input.add(new PlaceNameWithWeight("P2", -1F));
+				input.add(new PlaceNameWithWeight("P2", 1F));
 
 				
 				ArrayList<String> Output = new ArrayList<>();
 				Output.add("P3");
 
 				
-				grdT1.Activations.add(new Activation(t1, flrs2x1, input, TransitionOperation.FLRS, Output));
+				grdT1.Activations.add(new Activation(t1, reader, input, TransitionOperation.FLRS, Output));
 				
 				t1.GuardMappingList.add(grdT1);
 
